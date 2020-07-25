@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Users Data</div>
+  <div class="panel-body">
+    <button class="btn-primary" (click)="load()">click</button>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let f of datas">
+        {{f.name}}
+      </li>
+    </ul>
+  </div>
+</div>
+<label for="in">
+  <input id="in" type="text" #data (keyup.enter)="posted(data)" >
+</label>
+
+
