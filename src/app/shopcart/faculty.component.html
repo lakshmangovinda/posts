@@ -1,0 +1,36 @@
+<ngx-loading-bar color="purple" height="4px"></ngx-loading-bar>
+<div class="jumbotron alert-danger alert" *ngIf="!a">Please select Any one Product and Return To Your Cart</div>
+<div *ngIf="a">
+  <div></div>
+  <div><h2>You have {{Tq}} items in shoppingcart</h2>
+    <button  mat-raised-button color="primary" (click)="clear()"> clear Cart</button></div><br/><hr/>
+  <table class="table" >
+ <thead> <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Quantity</th>
+    <th>Total price</th>
+</tr>
+ </thead>
+  <tbody>
+  <tr *ngFor="let p of data">
+    <td>{{p.category}}</td>
+    <td>{{p.title}}</td>
+    <td>{{p.q}}{{p.units}}
+    </td>
+    <td>{{p.price * p.q | currency:'INR':'symbol-narrow' }}</td>
+  </tr>
+  <tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>TotalPrice:</td>
+    <td>{{Tp | currency:'INR':'symbol-narrow'}}</td>
+  </tr>
+  </tfoot>
+</table>
+<button mat-raised-button color="primary" routerLink="/checkout">Checkout</button>
+</div><br/><hr/>
+<button mat-raised-button color="primary" routerLink="">Continue-Shopping</button>

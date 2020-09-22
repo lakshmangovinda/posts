@@ -1,0 +1,82 @@
+<ngx-loading-bar color="purple" height="4px"></ngx-loading-bar>
+<div class="row">
+  <div class="col-4">
+    <form #f="ngForm">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input ngModel name="title" #title="ngModel" id="title" type="text" class="form-control" required>
+    <div class="alert-danger" *ngIf="title.touched && title.invalid">
+      Title Required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <div class="input-group">
+      <span class="input-group-addon">₹</span>
+      <input ngModel name="price"  #price="ngModel" id="price" type="number" class="form-control" required="required" [min]="10">
+    </div>
+    <div class="alert-danger" *ngIf="price.touched && price.invalid">
+      <div *ngIf="price.errors.required"> Price Required</div>
+      <div *ngIf="price.errors.min"> Price Should be 1 or higher</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select ngModel name="category" #category="ngModel" id="category" class="form-control">
+      <option value="">Select One Category</option>
+      <option value="fruits">fruits</option>
+      <option value="vegetables">vegitables</option>
+      <option value="dryfruits">dryFruits</option>
+      <option value="nutrients">nutrients</option>
+      <option value="chocolates">chocolates</option>
+    </select>
+    <div class="alert-danger" *ngIf="category.touched && category.invalid">
+      <div *ngIf="category.errors.required"> category Required</div>
+  </div>
+  </div>
+
+      <div class="form-group">
+        <label for="url">imageURL</label>
+        <input  #url="ngModel" ngModel name="url" required id="url" type="text" class="form-control" url>
+        <div class="alert-danger" *ngIf="url.touched && url.invalid">
+          <div *ngIf="price.errors.required"> Url Required</div>
+          <div *ngIf="price.errors.url"> enter valid url</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="quan">Quantity</label>
+        <input  #quan="ngModel" ngModel name="quan" required id="quan" type="text" class="form-control">
+        <div class="alert-danger" *ngIf="quan.touched && quan.invalid">
+          <div *ngIf="quan.errors.required"> Quantity Required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="units">Units</label>
+        <input  #units="ngModel" ngModel name="units" required id="units" type="text" class="form-control">
+        <div class="alert-danger" *ngIf="units.touched && units.invalid">
+          <div *ngIf="units.errors.required"> units Required</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" [disabled]="units.pristine"  (click)="posted(f.value)">save</button><br/><br/>
+    </form>
+  </div>
+  <div class="col-4">
+    <mat-card class="example-card" style="width: 20rem;">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Name:{{title.value}}</mat-card-title>
+        <mat-card-subtitle>Category:{{category.value}}</mat-card-subtitle>
+      </mat-card-header>
+      <img  *ngIf="url.value" mat-card-image  [src]="url.value" style="height: 15rem;width: 20rem">
+      <mat-card-content>
+        <p>
+          Price: {{price.value | currency:'INR':'symbol-narrow'}} FOR: 1KG</p>
+        <p>Quantity:{{quan.value}}units:{{units.value}}</p>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

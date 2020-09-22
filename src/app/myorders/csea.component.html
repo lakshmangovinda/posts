@@ -1,0 +1,31 @@
+<ngx-loading-bar color="purple" height="4px"></ngx-loading-bar>
+<div >
+<table class="table" >
+  <thead> <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Quantity</th>
+    <th>Total price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of cart2">
+    <td>{{p.category}}</td>
+    <td>{{p.title}}</td>
+    <td>{{p.q}}{{p.units}}
+    </td>
+    <td>{{p.price * p.q | currency:'INR':'symbol-narrow' }}</td>
+  </tr>
+  <tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>TotalPrice:</td>
+    <td>{{Tp | currency:'INR':'symbol-narrow'}}</td>
+  </tr>
+  </tfoot>
+</table>
+</div>
+<button mat-raised-button color="primary" routerLink="">Continue-Shopping</button>

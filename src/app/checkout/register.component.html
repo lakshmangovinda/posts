@@ -1,0 +1,29 @@
+<ngx-loading-bar color="black" height="3px"></ngx-loading-bar>
+<div *ngIf="!avail" class="alert-success">Nothing in shopcart to Checkout </div>
+<div *ngIf="avail">
+  <h1>Shipping</h1>
+  <div class="row">
+    <div class="col-6">
+      <form #f="ngForm">
+        <div class="form-group">
+          <label for="address"></label><textarea style="resize: none" id="address" rows="10" cols="50" ngModel name="address" #address="ngModel" required placeholder="Enter the addresss for delivery"></textarea>
+          <div class="alert alert-danger" *ngIf="address.touched && address.invalid">
+            Address Required
+          </div>
+        </div>
+        <button mat-raised-button color="primary" routerLink="/ordersucess" (click)="postuser(f.value)">PlaceOrder</button>
+      </form>
+    </div>
+    <div class="col-3">
+      <mat-card>OrderSummary:
+        <mat-card *ngFor="let a of data">
+          {{a.title}} = {{a.q}} x {{a.price  * a.q}}
+        </mat-card>
+        TotalPrice: {{Tprice}}
+      </mat-card>
+    </div>
+  </div>
+
+</div>
+
+

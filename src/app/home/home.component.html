@@ -1,0 +1,52 @@
+
+
+<ngx-loading-bar color="purple" height="4px"></ngx-loading-bar>
+
+<div class="row">
+  <div class="col-2">
+<ul class="list-group">
+  <li class="list-group-item" >
+    <mat-card>Categories:
+      <p class="btn btn-block" (click)="ngOnInit()">AllCategories</p><hr/>
+    </mat-card>
+    <mat-card *ngFor="let d of cat ">
+    <p class="btn btn-block" (click)="filter(d)" #d>
+      {{d}}
+  </p><hr/>
+  </mat-card>
+  </li>
+</ul>
+  </div>
+<div class="col" >
+  <div  class="row" >
+    <ng-container *ngFor="let f of t " style="padding: 2rem">
+      <div class="col-3"  style="padding: 1rem">
+        <mat-card class="example-card" style="width: 15rem">
+          <mat-card-header>
+            <mat-card-title>Name:{{f.title}}</mat-card-title>
+            <mat-card-subtitle>Category:{{f.category}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image  [src]="f.url" style="height: 12rem;width: 15rem">
+          <mat-card-content>
+            <p>
+              Price: {{f.price| currency:'INR':'symbol-narrow'}} FOR: 1KG</p>
+            <p>Quantity:{{f.quantity}}units:{{f.units}}</p>
+          </mat-card-content>
+
+          <div class="number" >
+            <ng-container *ngIf="f.btn2">
+            <button  mat-stroked-button color="accent"  (click)="minus(f)">-</button>
+            <input readonly style="width:2rem " type="text" name="in" [value]='f.q'/>
+            <button mat-stroked-button color="accent" (click)="plus(f)">+</button>
+          </ng-container>
+          </div><div>
+<ng-container *ngIf="f.btn1">
+  <button mat-stroked-button color="accent"  (click)="send(f)">Add To Cart</button>
+</ng-container></div>
+</mat-card>
+      </div>
+    </ng-container>
+  </div>
+
+</div>
+</div>

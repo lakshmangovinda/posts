@@ -1,0 +1,27 @@
+function htps(token)
+{
+  const options = {
+    headers: {
+      'Authorization': "Bearer eyJhbGciOiJFUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJiZHl6MUh1alhYdzZLLXowRUgwTTl0a3R4MFZnNXdoeEp6dnBXdFBXUHI0In0.eyJleHAiOjE1OTk5OTYzMDcsImlhdCI6MTU5OTk5MjcwNywianRpIjoiMGUxNzY2NjktZDk0Yy00ZTAyLTkwMDMtNzIyMmU4MDEyNTE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3JlYWxtMSIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50Iiwibm9kZWpzLWNvbm5lY3QiLCJicm9rZXIiLCJhY2NvdW50Il0sInN1YiI6ImUxMzY3MjUxLTBjMGEtNDExYS05MmYwLWEwOTJiYjgwNTZkYyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImMxIiwic2Vzc2lvbl9zdGF0ZSI6IjNkNjE4OTY4LTBmMTAtNGEyYS04Y2EyLTIwMGRkMzFhYzI2OSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdCIsImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicm9sZTEiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sIm5vZGVqcy1jb25uZWN0Ijp7InJvbGVzIjpbIm5ld3IiXX0sImJyb2tlciI6eyJyb2xlcyI6WyJyZWFkLXRva2VuIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsIm1hbmFnZS1jb25zZW50Iiwidmlldy1wcm9maWxlIl19LCJjMSI6eyJyb2xlcyI6WyJ1bWFfcHJvdGVjdGlvbiIsInIxIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInVzZXJfaWQiOlsicm9sZTEiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQWRtaW4iXSwibmFtZSI6Imxha3NobWFuIGdvdmluZGEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJsYWtzaG1hbiIsImdpdmVuX25hbWUiOiJsYWtzaG1hbiIsImZhbWlseV9uYW1lIjoiZ292aW5kYSIsImVtYWlsIjoibGFrc2htYW5nb3ZpbmQxOTk4QGdtYWlsLmNvbSJ9.HxsbdxHCF3rhGGouNrsTmdhNppU2Giw8J_qZHlQTxypU9r8YeVMCqC7BotJJknzc2QaM-M1HTQClcGwshlcCnA"
+    },
+    hostname: "localhost",
+    port: "8080",
+    path: '/auth/admin/realms/realm1/users',
+    method: 'GET'
+  };
+
+  const callback = function(response) {
+    let str = [];
+    response.on('data', function (chunk) {
+
+      str += chunk;
+    });
+
+    response.on('end', function () {
+      console.log(str);
+      // your code here if you want to use the results !
+    });
+  };
+
+  const req = http.request(options, callback).end();
+}

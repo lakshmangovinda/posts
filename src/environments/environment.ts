@@ -3,9 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: true,
+  envName: 'local',
+  keycloak: {
+    // Url of the Identity Provider
+    issuer: 'http://localhost:8080/auth/',
 
+    // Realm
+    realm: 'realm1',
+
+    // The SPA's id.
+    // The SPA is registerd with this id at the auth-serverß
+    clientId: 'c1',
+  }
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
