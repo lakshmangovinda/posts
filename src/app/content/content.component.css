@@ -1,0 +1,192 @@
+/*styling headings*/
+h5 {
+  opacity: 10;
+  font-size: 15px;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+/*styling body making flexible.................................................*/
+body {
+  display: flex;
+  flex-wrap: wrap;
+} /*styling SearchBar*/
+.searchbar {
+  display: inline;
+}
+
+.searchbaricon{
+  display: inline;
+  align-content: center;
+  text-align: center;
+}
+.searchbaricon span{
+  background-color: white;
+  color: black;
+  width: 45px;
+  height: 60px;
+  border-radius: 8px 0 0 8px;
+  padding-top: 20px ;
+  text-align: center;
+  align-content: center;
+}
+.material-icons{
+  font-size: 17px;
+}
+.icon{
+  text-align: center;
+  align-content: center;
+}
+.container{
+  width: 50px;
+  display: inline;
+}
+.select-box{
+  display: inline;
+  width: 50px;
+}
+.select-box select{
+  background-color: white;
+  font-size: 20px;
+  height: 60px;
+  padding: 10px 15px;
+  line-height: 22px;
+  appearance: none;
+  border-radius:  0 8px 8px 0;
+  outline: none;
+
+}
+
+.select-box option{
+  background-color: black;
+  color: white;
+}
+
+
+.searchbar {
+  width: 100%;
+  height: 60px;
+}
+.search {
+  background-color: white;
+  border-radius: 0;
+  font-size: 20px;
+  border: none;
+  border-collapse: collapse;
+  margin-top: -8px;
+  width: 52%;
+  height: 60px;
+  outline: none;
+  flex-wrap: wrap;
+} /*styling content alignment, displaying image, cover image*/
+.content {
+  height: 75vh;
+  width: 97vw;
+  text-align: center;
+  align-content: center;
+  color: white;
+  background-image: url(src/assets/images/structure.jpg);
+  background-repeat: no-repeat;
+  margin: 1%;
+  background-size: 100% 100%;
+  flex: 1;
+}
+.innercontent {
+  padding-top: 10%;
+}
+/* .innercontent h1{ 
+  height: 12px;
+  margin: 10px;
+  animation: pulse 1s infinite ease-in-out;
+  -webkit-animation: pulse 1s infinite ease-in-out;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
+/*Displayng Images and making responsive........................................................................................................................................*/
+.row {
+  display: flex;
+
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  padding: 0%;
+}
+/*making  responsive for max width*/
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+/*styling  Footer Container*/
+.last {
+  text-align: center;
+}
+/*styling  Button used for discover more*/
+.btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0px;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 35px;
+  width: 175px;
+  height: 50px;
+  margin: 3%;
+  text-align: center;
+  outline: none;
+}
+
+/*styling  and aligning footer information*/
+.last .footer {
+  line-height: 3;
+  margin: 2%;
+  margin-bottom: 30px;
+}
+/*css for hover effect on images*/
+.imgcontainer{
+  position: relative;
+}
+.column .imgcontainer .overlay {
+  position: absolute;
+  bottom: 0px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0); 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+.column .imgcontainer:hover .overlay {
+  opacity: 1;
+}

@@ -1,0 +1,39 @@
+<ul>
+  <li class="one">
+    <ul>
+      <li><a class="head" routerLink="">Pixabay</a></li>
+      <li><a class="navelements">Photo</a></li>
+      <li><a class="navelements">Illusion</a></li>
+      <li><a class="navelements">Vectors</a></li>
+      <li><a class="navelements">Videos</a></li>
+      <li><a class="navelements">Music</a></li>
+    </ul>
+  </li>
+  <li class="two">
+    <ul>
+      <li>
+        <a class="navelements"
+          >
+          <button mat-button [matMenuTriggerFor]="menu">Discover<span class="material-icons">keyboard_arrow_down</span></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+            <button mat-menu-item>Item 2</button>
+            <button mat-menu-item>Item 2</button>
+            <button mat-menu-item>Item 2</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </a>
+      </li>
+      <li><a class="navelements">Sign in</a></li>
+      <li><a class="navelements">Join</a></li>
+      <li>
+        <button class="btn">
+          <a style="color: white"><span class="material-icons">
+backup
+</span> UPLOADING </a>
+        </button>
+      </li>
+    </ul>
+  </li>
+</ul>
