@@ -1,39 +1,43 @@
-<ul>
+ <ul class=links>
   <li class="one">
-    <ul>
-      <li><a class="head" routerLink="">Pixabay</a></li>
-      <li><a class="navelements">Photo</a></li>
-      <li><a class="navelements">Illusion</a></li>
-      <li><a class="navelements">Vectors</a></li>
-      <li><a class="navelements">Videos</a></li>
-      <li><a class="navelements">Music</a></li>
-    </ul>
-  </li>
-  <li class="two">
-    <ul>
-      <li>
-        <a class="navelements"
-          >
-          <button mat-button [matMenuTriggerFor]="menu">Discover<span class="material-icons">keyboard_arrow_down</span></button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-            <button mat-menu-item>Item 2</button>
-            <button mat-menu-item>Item 2</button>
-            <button mat-menu-item>Item 2</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>
-        </a>
-      </li>
-      <li><a class="navelements">Sign in</a></li>
-      <li><a class="navelements">Join</a></li>
-      <li>
-        <button class="btn">
-          <a style="color: white"><span class="material-icons">
-backup
-</span> UPLOADING </a>
-        </button>
-      </li>
-    </ul>
-  </li>
-</ul>
+      <ul>
+        <li><a class="head" routerLink="">Pixabay</a></li>
+        <li><a class="navelements">Photo</a></li>
+        <li><a class="navelements">Illusion</a></li>
+        <li><a class="navelements">Vectors</a></li>
+        <li><a class="navelements">Videos</a></li>
+        <li><a class="navelements">Music</a></li>
+      </ul>
+    </li>
+  <ng-template [ngIf]="size">
+<li class="two" >
+      <ul>
+        <li>
+          <a class="navelements"
+            >
+            <button mat-button [matMenuTriggerFor]="menu" class="dropdown">Discover<span class="material-icons">keyboard_arrow_down</span></button>
+            <mat-menu #menu="matMenu">
+              <div class="columns-menu"><div id="mobile_menu_top" class="hide-sm hide-md hide-lg hide-xl"><a href="/accounts/login/?source=main_nav&amp;next=/" class="ua-login-main-nav">
+                Log in
+                </a><a style="border-left:1px solid #eee" href="/accounts/register/?source=main_nav">Join</a></div><div><b>Media</b><a class="hide-xl" href="/photos/">Photos</a><a class="hide-xl" href="/illustrations/">Illustrations</a><a class="hide-xl" href="/vectors/">Vectors</a><a class="hide-xl" href="/videos/">Videos</a><a class="hide-xl" href="/music/">Music</a><hr class="hide-xl"><a href="/editors_choice/">Editor's Choice</a><a href="/images/search/">Popular Images</a><a href="/videos/search/">Popular Videos</a><a href="/popular-searches/">Popular Searches</a></div><div><b>Community</b><a href="/blog/">Blog</a><a href="/forum/">Forum</a><a href="/users/">Artists</a><a href="/cameras/">Cameras</a></div><div><div class="last-column"><div><b>About</b><a href="/service/faq/">FAQ</a><a href="/service/terms/">Terms</a><a href="/service/privacy/">Privacy</a><a href="/service/about/">About Us</a><a href="/service/about/api/">API</a><a class="dd_box menu language_menu"><i class="icon icon_language"></i> Language</a><div><a onmousedown="setCookie('lang', 'cs', 3650);" href="/cs/">Čeština</a><a onmousedown="setCookie('lang', 'da', 3650);" href="/da/">Dansk</a><a onmousedown="setCookie('lang', 'de', 3650);" href="/de/">Deutsch</a><a onmousedown="setCookie('lang', 'en', 3650);" href="/">English</a><a onmousedown="setCookie('lang', 'es', 3650);" href="/es/">Español</a><a onmousedown="setCookie('lang', 'fr', 3650);" href="/fr/">Français</a><a onmousedown="setCookie('lang', 'id', 3650);" href="/id/">Indonesia</a><a onmousedown="setCookie('lang', 'it', 3650);" href="/it/">Italiano</a><a onmousedown="setCookie('lang', 'hu', 3650);" href="/hu/">Magyar</a><a onmousedown="setCookie('lang', 'nl', 3650);" href="/nl/">Nederlands</a><a onmousedown="setCookie('lang', 'no', 3650);" href="/no/">Norsk</a><a onmousedown="setCookie('lang', 'pl', 3650);" href="/pl/">Polski</a><a onmousedown="setCookie('lang', 'pt', 3650);" href="/pt/">Português</a><a onmousedown="setCookie('lang', 'ro', 3650);" href="/ro/">Română</a><a onmousedown="setCookie('lang', 'sk', 3650);" href="/sk/">Slovenčina</a><a onmousedown="setCookie('lang', 'fi', 3650);" href="/fi/">Suomi</a><a onmousedown="setCookie('lang', 'sv', 3650);" href="/sv/">Svenska</a><a onmousedown="setCookie('lang', 'tr', 3650);" href="/tr/">Türkçe</a><a onmousedown="setCookie('lang', 'vi', 3650);" href="/vi/">Việt</a><a onmousedown="setCookie('lang', 'th', 3650);" href="/th/">ไทย</a><a onmousedown="setCookie('lang', 'bg', 3650);" href="/bg/">Български</a><a onmousedown="setCookie('lang', 'ru', 3650);" href="/ru/">Русский</a><a onmousedown="setCookie('lang', 'el', 3650);" href="/el/">Ελληνική</a><a onmousedown="setCookie('lang', 'ja', 3650);" href="/ja/">日本語</a><a onmousedown="setCookie('lang', 'ko', 3650);" href="/ko/">한국어</a><a onmousedown="setCookie('lang', 'zh', 3650);" href="/zh/">简体中文</a></div></div><div><hr><div class="menu-social-icons"><div><div><a href="https://www.facebook.com/pixabay" target="_blank"><i class="icon icon_facebook_fff"></i></a></div><div><a href="https://www.instagram.com/pixabay/" target="_blank"><i class="icon icon_instagram_fff"></i></a></div><div><a href="https://twitter.com/pixabay" target="_blank"><i class="icon icon_twitter_fff"></i></a></div></div></div></div></div></div></div>
+            </mat-menu>
+          </a>
+        </li>
+        <li><a class="navelements">Sign in</a></li>
+        <li><a class="navelements">Join</a></li>
+        <li>
+          <button class="btn" >
+            <a style="color: white; text-decoration: none;" routerLink="post"><span class="material-icons">
+  backup
+  </span>uploading</a>
+          </button>
+        </li>
+      </ul>
+    </li>
+  </ng-template>
+  <div class="drop" (click)="showhide()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</ul> 

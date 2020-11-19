@@ -1,0 +1,15 @@
+<div class="image">
+     <h1>Select Image To Upload</h1><br>
+     <h3>Upload Image</h3>
+    <div class="upload">
+         <p >Click Here TO Upload Image</p>
+     <input
+#Image
+class="imageupload"
+type="file"
+(change)="imagepreview($event.target.files)"
+/>
+</div> 
+<img *ngIf="imageurl" [src]="imageurl" class="photo" width="30%" height="250px" />
+<button (click)="onUpload()" class="imagesubmit">Upload</button>
+</div>

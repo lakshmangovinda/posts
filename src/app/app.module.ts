@@ -9,21 +9,30 @@ import { RouterModule } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CommonModule } from '@angular/common';
+import { PostimagesComponent } from './postimages/postimages.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, ContentComponent],
+  declarations: [AppComponent, NavComponent, ContentComponent, PostimagesComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     RouterModule.forRoot([
       {
         path: '',
         component: ContentComponent,
       },
+      {
+        path: 'post',
+        component: PostimagesComponent,
+      },
     ]),
     MatMenuModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

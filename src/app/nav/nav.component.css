@@ -1,4 +1,4 @@
-ul {
+ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -29,7 +29,7 @@ li a {
   padding: 0px;
   text-align: left;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   display: inline-block;
   cursor: pointer;
   border-radius: 35px;
@@ -54,7 +54,7 @@ li a {
   flex-wrap: wrap;
 }
 .two ul {
-  margin-left: 35%;
+  margin-left: 25%;
 }
 .two .navelements  button{
   margin-top: -5%;
@@ -62,49 +62,117 @@ li a {
 .submitbtn{
   background-color: white;
 }
+@media screen and (max-width: 950px) {
+  .two{
+    margin-left: -35%;
+  }
+}
 @media screen and (max-width: 800px) {
-  .one {
-    flex: 1;
-    flex-wrap: wrap;
+  
+  .line{
+    width: 30px;
+    height: 3px;
+    background: black;
+    color: black;
+    margin: 5px;
   }
-  .one ul{
-    flex-wrap: wrap;
-    margin-left: 13%;
+  
+ 
+  .drop{
+    position: absolute;
+    cursor:pointer;
+    right: 3%;
+    top: -1%;
+transform: translate(-5%, 50%);
+z-index: 2;
   }
-  .two {
-    flex: 1;
-    margin-left: 2%;
-    flex-wrap: wrap;
-  }
+.one .navelements{
+  display: none;
+}
   .two ul {
-    flex-wrap: wrap;
-    margin-left: 13%;
+    height: 25vh;
+    width: 100%;
+    flex-direction: column;
+    align-content: flex-start;
+    background-color: teal;
+   color: white;
+  clip-path: circle(300px at 30% 5%);
+  -webkit-clip-path: circle(300px at 30% 5%);
+  transition:  all 1s ease-out;
+  }
+.two .navelements button{
+  padding: 0;
+}
+
+  .btn{
+    width: 125px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .one {
-    flex: 1;
-    flex-wrap: wrap;
-  }
-  .one ul{
-    flex-wrap: wrap;
-    margin-left: 5%;
-  }
-  .two {
-    flex: 1;
-    margin-left: 0%;
-    flex-wrap: wrap;
-  }
-  .two ul {
-    margin-left: 5%;
-  }
+  .one .navelements{
+    display: none;
+  
+    }
+  
+    .two ul {
+      height: 25vh;
+      width: 100%;
+      flex-direction: column;
+    
+    }
+    
+    .btn{
+      width: 125px;
+    }
+    .two .navelements button{
+      padding: 0;
+    }
 }
+@media screen and (max-width: 1258px) {
+  .two{
+    margin-left: -24%;
+    flex-wrap: wrap;
+    flex:1;
+  }
+  .one{
+      flex-wrap: wrap;
+      flex:1;
+    }
+  }
+
+
 /*Drop Down Content*/
 mat-menu
-
 {
   background-color: midnightblue;
 }
+.material-icons{
+font-size: 15px;
+}
+/* adding dropdown */
+#mobile_menu_top {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #1f2231!important;
+}
 
-/*a*/
+.columns-menu>div {
+  flex: 1;
+  border-right: 1px solid #2e303d;
+  padding: 0 0 5px;
+}
+
+
+@media screen and (min-width: 1180px){
+.hide-xl {
+    display: none!important;
+}
+}
+
+.pure-menu li li a, .pure-menu li ul {
+  min-width: 135px;
+  color: #9aa2b0;
+  background: #191b26!important;
+}
